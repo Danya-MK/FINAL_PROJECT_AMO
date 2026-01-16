@@ -1,0 +1,74 @@
+[2026-01-15T11:21:03.927+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-01-15T11:21:03.960+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: monitoring_retraining_pipeline.initial_baseline_train manual__2026-01-15T11:20:58.491765+00:00 [queued]>
+[2026-01-15T11:21:03.968+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: monitoring_retraining_pipeline.initial_baseline_train manual__2026-01-15T11:20:58.491765+00:00 [queued]>
+[2026-01-15T11:21:03.970+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-01-15T11:21:03.982+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): initial_baseline_train> on 2026-01-15 11:20:58.491765+00:00
+[2026-01-15T11:21:03.989+0000] {standard_task_runner.py:64} INFO - Started process 213 to run task
+[2026-01-15T11:21:03.994+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'monitoring_retraining_pipeline', 'initial_baseline_train', 'manual__2026-01-15T11:20:58.491765+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/monitoring_retraining_dag.py', '--cfg-path', '/tmp/tmp89xdk2e6']
+[2026-01-15T11:21:03.998+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask initial_baseline_train
+[2026-01-15T11:21:04.088+0000] {task_command.py:426} INFO - Running <TaskInstance: monitoring_retraining_pipeline.initial_baseline_train manual__2026-01-15T11:20:58.491765+00:00 [running]> on host 9179d4cffed9
+[2026-01-15T11:21:04.216+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='monitoring_retraining_pipeline' AIRFLOW_CTX_TASK_ID='initial_baseline_train' AIRFLOW_CTX_EXECUTION_DATE='2026-01-15T11:20:58.491765+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-15T11:20:58.491765+00:00'
+[2026-01-15T11:21:04.218+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-01-15T11:21:07.138+0000] {font_manager.py:1547} INFO - generated new fontManager
+[2026-01-15T11:21:09.610+0000] {logging_mixin.py:188} WARNING - 2026/01/15 11:21:09 INFO mlflow.tracking.fluent: Experiment with name 'wine_quality_automl_retrain' does not exist. Creating a new experiment.
+[2026-01-15T11:21:09.632+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-01-15T11:21:09.633+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/monitoring_retraining_dag.py", line 62, in initial_baseline_train
+    model_info = train_and_log(
+                 ^^^^^^^^^^^^^^
+  File "/opt/airflow/src/train_pycaret.py", line 12, in train_and_log
+    mlflow.set_experiment(exp_name)
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/tracking/fluent.py", line 152, in set_experiment
+    experiment_id = client.create_experiment(experiment_name)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/tracking/client.py", line 599, in create_experiment
+    return self._tracking_client.create_experiment(name, artifact_location, tags)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/tracking/_tracking_service/client.py", line 251, in create_experiment
+    return self.store.create_experiment(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/store/tracking/rest_store.py", line 101, in create_experiment
+    response_proto = self._call_endpoint(CreateExperiment, req_body)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/store/tracking/rest_store.py", line 60, in _call_endpoint
+    return call_endpoint(self.get_host_creds(), endpoint, method, json_body, response_proto)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/utils/rest_utils.py", line 290, in call_endpoint
+    response = verify_rest_response(response, endpoint)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/utils/rest_utils.py", line 173, in verify_rest_response
+    raise RestException(json.loads(response.text))
+mlflow.exceptions.RestException: RESOURCE_ALREADY_EXISTS: Experiment(name=wine_quality_automl_retrain) already exists. Error: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "experiments_name_key"
+DETAIL:  Key (name)=(wine_quality_automl_retrain) already exists.
+
+[SQL: INSERT INTO experiments (name, artifact_location, lifecycle_stage, creation_time, last_update_time) VALUES (%(name)s, %(artifact_location)s, %(lifecycle_stage)s, %(creation_time)s, %(last_update_time)s) RETURNING experiments.experiment_id]
+[parameters: {'name': 'wine_quality_automl_retrain', 'artifact_location': '', 'lifecycle_stage': 'active', 'creation_time': 1768476069624, 'last_update_time': 1768476069624}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-15T11:21:09.690+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=monitoring_retraining_pipeline, task_id=initial_baseline_train, run_id=manual__2026-01-15T11:20:58.491765+00:00, execution_date=20260115T112058, start_date=20260115T112103, end_date=20260115T112109
+[2026-01-15T11:21:09.712+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 4 for task initial_baseline_train (RESOURCE_ALREADY_EXISTS: Experiment(name=wine_quality_automl_retrain) already exists. Error: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "experiments_name_key"
+DETAIL:  Key (name)=(wine_quality_automl_retrain) already exists.
+
+[SQL: INSERT INTO experiments (name, artifact_location, lifecycle_stage, creation_time, last_update_time) VALUES (%(name)s, %(artifact_location)s, %(lifecycle_stage)s, %(creation_time)s, %(last_update_time)s) RETURNING experiments.experiment_id]
+[parameters: {'name': 'wine_quality_automl_retrain', 'artifact_location': '', 'lifecycle_stage': 'active', 'creation_time': 1768476069624, 'last_update_time': 1768476069624}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj); 213)
+[2026-01-15T11:21:09.811+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-01-15T11:21:09.889+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-01-15T11:21:09.903+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

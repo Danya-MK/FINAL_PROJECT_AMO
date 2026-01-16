@@ -1,0 +1,172 @@
+[2026-01-15T11:21:03.927+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-01-15T11:21:03.959+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: monitoring_retraining_pipeline.initial_baseline_train scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T11:21:03.967+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: monitoring_retraining_pipeline.initial_baseline_train scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T11:21:03.970+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-01-15T11:21:03.983+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): initial_baseline_train> on 2026-01-14 00:00:00+00:00
+[2026-01-15T11:21:03.992+0000] {standard_task_runner.py:64} INFO - Started process 214 to run task
+[2026-01-15T11:21:03.997+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'monitoring_retraining_pipeline', 'initial_baseline_train', 'scheduled__2026-01-14T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/monitoring_retraining_dag.py', '--cfg-path', '/tmp/tmpdxv9h9i0']
+[2026-01-15T11:21:04.000+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask initial_baseline_train
+[2026-01-15T11:21:04.090+0000] {task_command.py:426} INFO - Running <TaskInstance: monitoring_retraining_pipeline.initial_baseline_train scheduled__2026-01-14T00:00:00+00:00 [running]> on host 9179d4cffed9
+[2026-01-15T11:21:04.213+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='monitoring_retraining_pipeline' AIRFLOW_CTX_TASK_ID='initial_baseline_train' AIRFLOW_CTX_EXECUTION_DATE='2026-01-14T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-01-14T00:00:00+00:00'
+[2026-01-15T11:21:04.214+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-01-15T11:21:07.238+0000] {font_manager.py:1547} INFO - generated new fontManager
+[2026-01-15T11:21:09.606+0000] {logging_mixin.py:188} WARNING - 2026/01/15 11:21:09 INFO mlflow.tracking.fluent: Experiment with name 'wine_quality_automl_retrain' does not exist. Creating a new experiment.
+[2026-01-15T11:21:11.541+0000] {logging_mixin.py:188} WARNING - 2026/01/15 11:21:11 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+The git executable must be specified in one of the following ways:
+    - be included in your $PATH
+    - be set via $GIT_PYTHON_GIT_EXECUTABLE
+    - explicitly set via git.refresh(<full-path-to-git-executable>)
+
+All git commands will error until this is rectified.
+
+This initial message can be silenced or aggravated in the future by setting the
+$GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+    - quiet|q|silence|s|silent|none|n|0: for no message or exception
+    - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+    - error|e|exception|raise|r|2: for a raised exception
+
+Example:
+    export GIT_PYTHON_REFRESH=quiet
+[2026-01-15T11:21:11.865+0000] {logging_mixin.py:188} WARNING - Processing:   0%|          | 0/61 [00:00<?, ?it/s]
+[2026-01-15T11:21:12.572+0000] {logging_mixin.py:188} WARNING - Processing:   8%|8         | 5/61 [00:00<00:07,  7.08it/s]
+[2026-01-15T11:21:12.734+0000] {logging_mixin.py:188} WARNING - Processing:  11%|#1        | 7/61 [00:00<00:06,  8.39it/s]
+[2026-01-15T11:21:13.221+0000] {logging_mixin.py:188} WARNING - Processing:  15%|#4        | 9/61 [00:01<00:08,  6.18it/s]
+[2026-01-15T11:21:13.374+0000] {logging_mixin.py:188} WARNING - Processing:  18%|#8        | 11/61 [00:01<00:06,  7.47it/s]
+[2026-01-15T11:21:13.644+0000] {logging_mixin.py:188} WARNING - Processing:  21%|##1       | 13/61 [00:01<00:06,  7.45it/s]
+[2026-01-15T11:21:13.854+0000] {logging_mixin.py:188} WARNING - Processing:  25%|##4       | 15/61 [00:01<00:05,  7.99it/s]
+[2026-01-15T11:21:14.145+0000] {logging_mixin.py:188} WARNING - Processing:  28%|##7       | 17/61 [00:02<00:05,  7.62it/s]
+[2026-01-15T11:21:14.325+0000] {logging_mixin.py:188} WARNING - Processing:  31%|###1      | 19/61 [00:02<00:04,  8.43it/s]
+[2026-01-15T11:21:14.590+0000] {logging_mixin.py:188} WARNING - Processing:  34%|###4      | 21/61 [00:02<00:04,  8.13it/s]
+[2026-01-15T11:21:14.743+0000] {logging_mixin.py:188} WARNING - Processing:  38%|###7      | 23/61 [00:02<00:04,  9.19it/s]
+[2026-01-15T11:21:14.989+0000] {logging_mixin.py:188} WARNING - Processing:  41%|####      | 25/61 [00:03<00:04,  8.84it/s]
+[2026-01-15T11:21:15.136+0000] {logging_mixin.py:188} WARNING - Processing:  44%|####4     | 27/61 [00:03<00:03,  9.88it/s]
+[2026-01-15T11:21:17.640+0000] {logging_mixin.py:188} WARNING - Processing:  48%|####7     | 29/61 [00:05<00:14,  2.23it/s]
+[2026-01-15T11:21:17.790+0000] {logging_mixin.py:188} WARNING - Processing:  51%|#####     | 31/61 [00:05<00:10,  2.98it/s]
+[2026-01-15T11:21:18.018+0000] {logging_mixin.py:188} WARNING - Processing:  54%|#####4    | 33/61 [00:06<00:07,  3.72it/s]
+[2026-01-15T11:21:18.169+0000] {logging_mixin.py:188} WARNING - Processing:  57%|#####7    | 35/61 [00:06<00:05,  4.74it/s]
+[2026-01-15T11:21:19.973+0000] {logging_mixin.py:188} WARNING - Processing:  61%|######    | 37/61 [00:08<00:10,  2.39it/s]
+[2026-01-15T11:21:20.126+0000] {logging_mixin.py:188} WARNING - Processing:  64%|######3   | 39/61 [00:08<00:06,  3.17it/s]
+[2026-01-15T11:21:21.292+0000] {logging_mixin.py:188} WARNING - Processing:  67%|######7   | 41/61 [00:09<00:07,  2.53it/s]
+[2026-01-15T11:21:21.441+0000] {logging_mixin.py:188} WARNING - Processing:  70%|#######   | 43/61 [00:09<00:05,  3.34it/s]
+[2026-01-15T11:21:21.684+0000] {logging_mixin.py:188} WARNING - Processing:  74%|#######3  | 45/61 [00:09<00:03,  4.06it/s]
+[2026-01-15T11:21:21.834+0000] {logging_mixin.py:188} WARNING - Processing:  77%|#######7  | 47/61 [00:09<00:02,  5.14it/s]
+[2026-01-15T11:21:24.018+0000] {logging_mixin.py:188} WARNING - Processing:  80%|########  | 49/61 [00:12<00:05,  2.16it/s]
+[2026-01-15T11:21:24.160+0000] {logging_mixin.py:188} WARNING - Processing:  84%|########3 | 51/61 [00:12<00:03,  2.89it/s]
+[2026-01-15T11:21:25.332+0000] {logging_mixin.py:188} WARNING - Processing:  87%|########6 | 53/61 [00:13<00:03,  2.39it/s]
+[2026-01-15T11:21:25.483+0000] {logging_mixin.py:188} WARNING - Processing:  90%|######### | 55/61 [00:13<00:01,  3.17it/s]
+[2026-01-15T11:21:25.690+0000] {logging_mixin.py:188} WARNING - Processing:  93%|#########3| 57/61 [00:13<00:01,  3.97it/s]
+[2026-01-15T11:21:25.834+0000] {logging_mixin.py:188} WARNING - Processing:  97%|#########6| 59/61 [00:13<00:00,  5.06it/s]
+[2026-01-15T11:21:26.220+0000] {logging_mixin.py:188} WARNING - Processing: 100%|##########| 61/61 [00:14<00:00,  5.09it/s]
+[2026-01-15T11:21:26.221+0000] {logging_mixin.py:188} WARNING -                                                            
+[2026-01-15T11:21:34.240+0000] {logging_mixin.py:188} INFO -                                     Model  Accuracy     AUC  Recall   Prec.  \
+et                 Extra Trees Classifier    0.7867  0.8648  0.8062  0.7971   
+rf               Random Forest Classifier    0.7893  0.8624  0.8087  0.7996   
+lightgbm  Light Gradient Boosting Machine    0.7855  0.8445  0.8015  0.7979   
+gbc          Gradient Boosting Classifier    0.7740  0.8418  0.7919  0.7870   
+lda          Linear Discriminant Analysis    0.7483  0.8135  0.7655  0.7635   
+ridge                    Ridge Classifier    0.7484  0.8128  0.7631  0.7650   
+ada                  Ada Boost Classifier    0.7484  0.8113  0.7729  0.7607   
+lr                    Logistic Regression    0.7521  0.8090  0.7631  0.7700   
+nb                            Naive Bayes    0.7266  0.7893  0.7536  0.7413   
+qda       Quadratic Discriminant Analysis    0.7164  0.7877  0.8206  0.7013   
+svm                   SVM - Linear Kernel    0.5735  0.7197  0.7948  0.6407   
+dt               Decision Tree Classifier    0.7113  0.7100  0.7297  0.7313   
+knn                K Neighbors Classifier    0.6577  0.6875  0.6818  0.6800   
+dummy                    Dummy Classifier    0.5338  0.5000  1.0000  0.5338   
+
+              F1   Kappa     MCC  TT (Sec)  
+et        0.8012  0.5711  0.5719     0.436  
+rf        0.8040  0.5762  0.5765     0.500  
+lightgbm  0.7994  0.5688  0.5693     0.234  
+gbc       0.7889  0.5457  0.5465     0.232  
+lda       0.7637  0.4945  0.4956     0.048  
+ridge     0.7634  0.4946  0.4955     0.048  
+ada       0.7660  0.4940  0.4953     0.360  
+lr        0.7661  0.5025  0.5032     0.140  
+nb        0.7456  0.4501  0.4529     0.054  
+qda       0.7552  0.4230  0.4324     0.046  
+svm       0.6300  0.1157  0.1557     0.052  
+dt        0.7296  0.4199  0.4211     0.058  
+knn       0.6797  0.3120  0.3133     0.096  
+dummy     0.6961  0.0000  0.0000     0.040  
+[2026-01-15T11:21:40.974+0000] {python.py:237} INFO - Done. Returned value was: {'run_id': '44524191ce8a413c8f4487b40c96f576', 'experiment_name': 'wine_quality_automl_retrain'}
+[2026-01-15T11:21:40.975+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-01-15T11:21:41.003+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=monitoring_retraining_pipeline, task_id=initial_baseline_train, run_id=scheduled__2026-01-14T00:00:00+00:00, execution_date=20260114T000000, start_date=20260115T112103, end_date=20260115T112141
+[2026-01-15T11:21:41.011+0000] {logging_mixin.py:188} WARNING - 
+[2026-01-15T11:21:41.082+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-01-15T11:21:41.108+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-01-15T11:21:41.111+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-01-15T12:22:58.874+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-01-15T12:22:58.910+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: monitoring_retraining_pipeline.initial_baseline_train scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T12:22:58.922+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: monitoring_retraining_pipeline.initial_baseline_train scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T12:22:58.922+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-01-15T12:22:58.938+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): initial_baseline_train> on 2026-01-14 00:00:00+00:00
+[2026-01-15T12:22:58.947+0000] {standard_task_runner.py:64} INFO - Started process 332 to run task
+[2026-01-15T12:22:58.952+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'monitoring_retraining_pipeline', 'initial_baseline_train', 'scheduled__2026-01-14T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/monitoring_retraining_dag.py', '--cfg-path', '/tmp/tmplmwg5936']
+[2026-01-15T12:22:58.956+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask initial_baseline_train
+[2026-01-15T12:22:59.050+0000] {task_command.py:426} INFO - Running <TaskInstance: monitoring_retraining_pipeline.initial_baseline_train scheduled__2026-01-14T00:00:00+00:00 [running]> on host 38a5c3da6727
+[2026-01-15T12:22:59.166+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='monitoring_retraining_pipeline' AIRFLOW_CTX_TASK_ID='initial_baseline_train' AIRFLOW_CTX_EXECUTION_DATE='2026-01-14T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-01-14T00:00:00+00:00'
+[2026-01-15T12:22:59.167+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-01-15T12:23:02.315+0000] {font_manager.py:1547} INFO - generated new fontManager
+[2026-01-15T12:23:05.279+0000] {logging_mixin.py:188} WARNING - 2026/01/15 12:23:05 INFO mlflow.tracking.fluent: Experiment with name 'wine_quality_automl_retrain' does not exist. Creating a new experiment.
+[2026-01-15T12:23:05.300+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-01-15T12:23:05.301+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/monitoring_retraining_dag.py", line 62, in initial_baseline_train
+    model_info = train_and_log(
+                 ^^^^^^^^^^^^^^
+  File "/opt/airflow/src/train_pycaret.py", line 12, in train_and_log
+    mlflow.set_experiment(exp_name)
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/tracking/fluent.py", line 152, in set_experiment
+    experiment_id = client.create_experiment(experiment_name)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/tracking/client.py", line 599, in create_experiment
+    return self._tracking_client.create_experiment(name, artifact_location, tags)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/tracking/_tracking_service/client.py", line 251, in create_experiment
+    return self.store.create_experiment(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/store/tracking/rest_store.py", line 101, in create_experiment
+    response_proto = self._call_endpoint(CreateExperiment, req_body)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/store/tracking/rest_store.py", line 60, in _call_endpoint
+    return call_endpoint(self.get_host_creds(), endpoint, method, json_body, response_proto)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/utils/rest_utils.py", line 290, in call_endpoint
+    response = verify_rest_response(response, endpoint)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/utils/rest_utils.py", line 173, in verify_rest_response
+    raise RestException(json.loads(response.text))
+mlflow.exceptions.RestException: RESOURCE_ALREADY_EXISTS: Experiment(name=wine_quality_automl_retrain) already exists. Error: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "experiments_name_key"
+DETAIL:  Key (name)=(wine_quality_automl_retrain) already exists.
+
+[SQL: INSERT INTO experiments (name, artifact_location, lifecycle_stage, creation_time, last_update_time) VALUES (%(name)s, %(artifact_location)s, %(lifecycle_stage)s, %(creation_time)s, %(last_update_time)s) RETURNING experiments.experiment_id]
+[parameters: {'name': 'wine_quality_automl_retrain', 'artifact_location': '', 'lifecycle_stage': 'active', 'creation_time': 1768479785287, 'last_update_time': 1768479785287}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-15T12:23:05.339+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=monitoring_retraining_pipeline, task_id=initial_baseline_train, run_id=scheduled__2026-01-14T00:00:00+00:00, execution_date=20260114T000000, start_date=20260115T122258, end_date=20260115T122305
+[2026-01-15T12:23:05.356+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 5 for task initial_baseline_train (RESOURCE_ALREADY_EXISTS: Experiment(name=wine_quality_automl_retrain) already exists. Error: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "experiments_name_key"
+DETAIL:  Key (name)=(wine_quality_automl_retrain) already exists.
+
+[SQL: INSERT INTO experiments (name, artifact_location, lifecycle_stage, creation_time, last_update_time) VALUES (%(name)s, %(artifact_location)s, %(lifecycle_stage)s, %(creation_time)s, %(last_update_time)s) RETURNING experiments.experiment_id]
+[parameters: {'name': 'wine_quality_automl_retrain', 'artifact_location': '', 'lifecycle_stage': 'active', 'creation_time': 1768479785287, 'last_update_time': 1768479785287}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj); 332)
+[2026-01-15T12:23:05.421+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-01-15T12:23:05.456+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-01-15T12:23:05.460+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

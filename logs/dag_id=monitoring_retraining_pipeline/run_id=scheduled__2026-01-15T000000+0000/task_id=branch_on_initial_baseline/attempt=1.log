@@ -1,0 +1,22 @@
+[2026-01-16T05:47:23.084+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-01-16T05:47:23.119+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: monitoring_retraining_pipeline.branch_on_initial_baseline scheduled__2026-01-15T00:00:00+00:00 [queued]>
+[2026-01-16T05:47:23.127+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: monitoring_retraining_pipeline.branch_on_initial_baseline scheduled__2026-01-15T00:00:00+00:00 [queued]>
+[2026-01-16T05:47:23.129+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-01-16T05:47:23.142+0000] {taskinstance.py:2330} INFO - Executing <Task(BranchPythonOperator): branch_on_initial_baseline> on 2026-01-15 00:00:00+00:00
+[2026-01-16T05:47:23.149+0000] {standard_task_runner.py:64} INFO - Started process 172 to run task
+[2026-01-16T05:47:23.154+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'monitoring_retraining_pipeline', 'branch_on_initial_baseline', 'scheduled__2026-01-15T00:00:00+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/monitoring_retraining_dag.py', '--cfg-path', '/tmp/tmpiilgp8w1']
+[2026-01-16T05:47:23.158+0000] {standard_task_runner.py:91} INFO - Job 20: Subtask branch_on_initial_baseline
+[2026-01-16T05:47:23.244+0000] {task_command.py:426} INFO - Running <TaskInstance: monitoring_retraining_pipeline.branch_on_initial_baseline scheduled__2026-01-15T00:00:00+00:00 [running]> on host 38a5c3da6727
+[2026-01-16T05:47:23.339+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='monitoring_retraining_pipeline' AIRFLOW_CTX_TASK_ID='branch_on_initial_baseline' AIRFLOW_CTX_EXECUTION_DATE='2026-01-15T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-01-15T00:00:00+00:00'
+[2026-01-16T05:47:23.340+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-01-16T05:47:23.360+0000] {baseoperator.py:400} WARNING - BranchPythonOperator.execute cannot be called outside TaskInstance!
+[2026-01-16T05:47:24.845+0000] {logging_mixin.py:188} WARNING - /opt/***/dags/monitoring_retraining_dag.py:45 FutureWarning: ``mlflow.tracking.client.MlflowClient.get_latest_versions`` is deprecated since 2.9.0. Model registry stages will be removed in a future major release. To learn more about the deprecation of model registry stages, see our migration guide here: https://mlflow.org/docs/2.12.2/model-registry.html#migrating-from-stages
+[2026-01-16T05:47:25.577+0000] {python.py:237} INFO - Done. Returned value was: skip_initial_baseline
+[2026-01-16T05:47:25.578+0000] {branch.py:36} INFO - Branch into skip_initial_baseline
+[2026-01-16T05:47:25.578+0000] {skipmixin.py:178} INFO - Following branch skip_initial_baseline
+[2026-01-16T05:47:25.616+0000] {skipmixin.py:246} INFO - Skipping tasks [('initial_baseline_train', -1)]
+[2026-01-16T05:47:25.658+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-01-16T05:47:25.683+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=monitoring_retraining_pipeline, task_id=branch_on_initial_baseline, run_id=scheduled__2026-01-15T00:00:00+00:00, execution_date=20260115T000000, start_date=20260116T054723, end_date=20260116T054725
+[2026-01-16T05:47:25.736+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-01-16T05:47:25.772+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-01-16T05:47:25.781+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

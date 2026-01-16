@@ -1,0 +1,96 @@
+[2026-01-15T12:23:45.772+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-01-15T12:23:45.803+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: monitoring_retraining_pipeline.retrain_automl manual__2026-01-15T12:22:54.009486+00:00 [queued]>
+[2026-01-15T12:23:45.811+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: monitoring_retraining_pipeline.retrain_automl manual__2026-01-15T12:22:54.009486+00:00 [queued]>
+[2026-01-15T12:23:45.816+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-01-15T12:23:45.827+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): retrain_automl> on 2026-01-15 12:22:54.009486+00:00
+[2026-01-15T12:23:45.835+0000] {standard_task_runner.py:64} INFO - Started process 651 to run task
+[2026-01-15T12:23:45.840+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'monitoring_retraining_pipeline', 'retrain_automl', 'manual__2026-01-15T12:22:54.009486+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/monitoring_retraining_dag.py', '--cfg-path', '/tmp/tmppb284goj']
+[2026-01-15T12:23:45.843+0000] {standard_task_runner.py:91} INFO - Job 9: Subtask retrain_automl
+[2026-01-15T12:23:45.917+0000] {task_command.py:426} INFO - Running <TaskInstance: monitoring_retraining_pipeline.retrain_automl manual__2026-01-15T12:22:54.009486+00:00 [running]> on host 38a5c3da6727
+[2026-01-15T12:23:46.009+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='monitoring_retraining_pipeline' AIRFLOW_CTX_TASK_ID='retrain_automl' AIRFLOW_CTX_EXECUTION_DATE='2026-01-15T12:22:54.009486+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-15T12:22:54.009486+00:00'
+[2026-01-15T12:23:46.011+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-01-15T12:23:49.656+0000] {logging_mixin.py:188} WARNING - 2026/01/15 12:23:49 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+The git executable must be specified in one of the following ways:
+    - be included in your $PATH
+    - be set via $GIT_PYTHON_GIT_EXECUTABLE
+    - explicitly set via git.refresh(<full-path-to-git-executable>)
+
+All git commands will error until this is rectified.
+
+This initial message can be silenced or aggravated in the future by setting the
+$GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+    - quiet|q|silence|s|silent|none|n|0: for no message or exception
+    - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+    - error|e|exception|raise|r|2: for a raised exception
+
+Example:
+    export GIT_PYTHON_REFRESH=quiet
+[2026-01-15T12:23:49.934+0000] {logging_mixin.py:188} WARNING - Processing:   0%|          | 0/61 [00:00<?, ?it/s]
+[2026-01-15T12:23:54.410+0000] {logging_mixin.py:188} WARNING - Processing:   8%|8         | 5/61 [00:04<00:50,  1.12it/s]
+[2026-01-15T12:23:54.614+0000] {logging_mixin.py:188} WARNING - Processing:  11%|#1        | 7/61 [00:04<00:32,  1.65it/s]
+[2026-01-15T12:23:55.036+0000] {logging_mixin.py:188} WARNING - Processing:  15%|#4        | 9/61 [00:05<00:24,  2.12it/s]
+[2026-01-15T12:23:55.196+0000] {logging_mixin.py:188} WARNING - Processing:  18%|#8        | 11/61 [00:05<00:17,  2.92it/s]
+[2026-01-15T12:23:55.586+0000] {logging_mixin.py:188} WARNING - Processing:  21%|##1       | 13/61 [00:05<00:14,  3.38it/s]
+[2026-01-15T12:23:55.745+0000] {logging_mixin.py:188} WARNING - Processing:  25%|##4       | 15/61 [00:05<00:10,  4.39it/s]
+[2026-01-15T12:23:56.001+0000] {logging_mixin.py:188} WARNING - Processing:  28%|##7       | 17/61 [00:06<00:08,  5.07it/s]
+[2026-01-15T12:23:56.138+0000] {logging_mixin.py:188} WARNING - Processing:  31%|###1      | 19/61 [00:06<00:06,  6.34it/s]
+[2026-01-15T12:23:56.545+0000] {logging_mixin.py:188} WARNING - Processing:  34%|###4      | 21/61 [00:06<00:06,  5.83it/s]
+[2026-01-15T12:23:56.689+0000] {logging_mixin.py:188} WARNING - Processing:  38%|###7      | 23/61 [00:06<00:05,  7.07it/s]
+[2026-01-15T12:23:57.083+0000] {logging_mixin.py:188} WARNING - Processing:  41%|####      | 25/61 [00:07<00:05,  6.32it/s]
+[2026-01-15T12:23:57.246+0000] {logging_mixin.py:188} WARNING - Processing:  44%|####4     | 27/61 [00:07<00:04,  7.40it/s]
+[2026-01-15T12:24:00.315+0000] {logging_mixin.py:188} WARNING - Processing:  48%|####7     | 29/61 [00:10<00:17,  1.80it/s]
+[2026-01-15T12:24:00.462+0000] {logging_mixin.py:188} WARNING - Processing:  51%|#####     | 31/61 [00:10<00:12,  2.43it/s]
+[2026-01-15T12:24:00.707+0000] {logging_mixin.py:188} WARNING - Processing:  54%|#####4    | 33/61 [00:10<00:09,  3.08it/s]
+[2026-01-15T12:24:00.877+0000] {logging_mixin.py:188} WARNING - Processing:  57%|#####7    | 35/61 [00:10<00:06,  3.96it/s]
+[2026-01-15T12:24:02.020+0000] {logging_mixin.py:188} WARNING - Processing:  61%|######    | 37/61 [00:12<00:08,  2.87it/s]
+[2026-01-15T12:24:02.167+0000] {logging_mixin.py:188} WARNING - Processing:  64%|######3   | 39/61 [00:12<00:05,  3.76it/s]
+[2026-01-15T12:24:04.390+0000] {logging_mixin.py:188} WARNING - Processing:  67%|######7   | 41/61 [00:14<00:10,  1.92it/s]
+[2026-01-15T12:24:04.541+0000] {logging_mixin.py:188} WARNING - Processing:  70%|#######   | 43/61 [00:14<00:06,  2.59it/s]
+[2026-01-15T12:24:04.885+0000] {logging_mixin.py:188} WARNING - Processing:  74%|#######3  | 45/61 [00:14<00:05,  3.10it/s]
+[2026-01-15T12:24:05.053+0000] {logging_mixin.py:188} WARNING - Processing:  77%|#######7  | 47/61 [00:15<00:03,  3.99it/s]
+[2026-01-15T12:24:07.510+0000] {logging_mixin.py:188} WARNING - Processing:  80%|########  | 49/61 [00:17<00:06,  1.84it/s]
+[2026-01-15T12:24:07.661+0000] {logging_mixin.py:188} WARNING - Processing:  84%|########3 | 51/61 [00:17<00:04,  2.48it/s]
+[2026-01-15T12:24:08.901+0000] {logging_mixin.py:188} WARNING - Processing:  87%|########6 | 53/61 [00:18<00:03,  2.13it/s]
+[2026-01-15T12:24:09.059+0000] {logging_mixin.py:188} WARNING - Processing:  90%|######### | 55/61 [00:19<00:02,  2.84it/s]
+[2026-01-15T12:24:09.276+0000] {logging_mixin.py:188} WARNING - Processing:  93%|#########3| 57/61 [00:19<00:01,  3.59it/s]
+[2026-01-15T12:24:09.416+0000] {logging_mixin.py:188} WARNING - Processing:  97%|#########6| 59/61 [00:19<00:00,  4.63it/s]
+[2026-01-15T12:24:09.822+0000] {logging_mixin.py:188} WARNING - Processing: 100%|##########| 61/61 [00:19<00:00,  4.71it/s]
+[2026-01-15T12:24:09.823+0000] {logging_mixin.py:188} WARNING -                                                            
+[2026-01-15T12:24:17.645+0000] {logging_mixin.py:188} INFO -                                     Model  Accuracy     AUC  Recall   Prec.  \
+et                 Extra Trees Classifier    0.8061  0.8826  0.8295  0.8121   
+rf               Random Forest Classifier    0.7936  0.8735  0.8094  0.8061   
+gbc          Gradient Boosting Classifier    0.7775  0.8617  0.8144  0.7797   
+lightgbm  Light Gradient Boosting Machine    0.7829  0.8612  0.7943  0.7991   
+ada                  Ada Boost Classifier    0.7525  0.8310  0.7692  0.7683   
+lda          Linear Discriminant Analysis    0.7507  0.8235  0.7510  0.7762   
+ridge                    Ridge Classifier    0.7471  0.8225  0.7509  0.7704   
+lr                    Logistic Regression    0.7471  0.8213  0.7576  0.7668   
+qda       Quadratic Discriminant Analysis    0.7364  0.7999  0.8077  0.7300   
+nb                            Naive Bayes    0.7319  0.7930  0.7626  0.7423   
+svm                   SVM - Linear Kernel    0.6793  0.7692  0.6374  0.7683   
+dt               Decision Tree Classifier    0.7212  0.7206  0.7291  0.7448   
+knn                K Neighbors Classifier    0.6613  0.7094  0.6890  0.6825   
+dummy                    Dummy Classifier    0.5344  0.5000  1.0000  0.5344   
+
+              F1   Kappa     MCC  TT (Sec)  
+et        0.8205  0.6097  0.6103     0.490  
+rf        0.8074  0.5850  0.5856     0.614  
+gbc       0.7965  0.5514  0.5522     0.444  
+lightgbm  0.7964  0.5638  0.5642     0.248  
+ada       0.7686  0.5024  0.5027     0.228  
+lda       0.7625  0.5003  0.5016     0.068  
+ridge     0.7600  0.4928  0.4936     0.078  
+lr        0.7615  0.4924  0.4933     0.894  
+qda       0.7660  0.4659  0.4708     0.048  
+nb        0.7518  0.4604  0.4613     0.078  
+svm       0.6587  0.3616  0.3939     0.080  
+dt        0.7365  0.4405  0.4411     0.050  
+knn       0.6853  0.3187  0.3193     0.084  
+dummy     0.6966  0.0000  0.0000     0.042  
+[2026-01-15T12:24:24.313+0000] {python.py:237} INFO - Done. Returned value was: {'run_id': 'e3630a552f7b4c8a917c04fc0bea503b', 'experiment_name': 'wine_quality_automl_retrain'}
+[2026-01-15T12:24:24.314+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-01-15T12:24:24.347+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=monitoring_retraining_pipeline, task_id=retrain_automl, run_id=manual__2026-01-15T12:22:54.009486+00:00, execution_date=20260115T122254, start_date=20260115T122345, end_date=20260115T122424
+[2026-01-15T12:24:24.357+0000] {logging_mixin.py:188} WARNING - 
+[2026-01-15T12:24:24.420+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-01-15T12:24:24.446+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-01-15T12:24:24.450+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

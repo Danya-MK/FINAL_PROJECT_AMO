@@ -1,0 +1,17 @@
+[2026-01-15T12:32:56.871+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-01-15T12:32:56.901+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: monitoring_retraining_pipeline.check_drift manual__2026-01-15T12:32:51.071007+00:00 [queued]>
+[2026-01-15T12:32:56.907+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: monitoring_retraining_pipeline.check_drift manual__2026-01-15T12:32:51.071007+00:00 [queued]>
+[2026-01-15T12:32:56.908+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-01-15T12:32:56.919+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): check_drift> on 2026-01-15 12:32:51.071007+00:00
+[2026-01-15T12:32:56.925+0000] {standard_task_runner.py:64} INFO - Started process 1091 to run task
+[2026-01-15T12:32:56.928+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'monitoring_retraining_pipeline', 'check_drift', 'manual__2026-01-15T12:32:51.071007+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/monitoring_retraining_dag.py', '--cfg-path', '/tmp/tmp4cl0altu']
+[2026-01-15T12:32:56.931+0000] {standard_task_runner.py:91} INFO - Job 15: Subtask check_drift
+[2026-01-15T12:32:57.005+0000] {task_command.py:426} INFO - Running <TaskInstance: monitoring_retraining_pipeline.check_drift manual__2026-01-15T12:32:51.071007+00:00 [running]> on host 38a5c3da6727
+[2026-01-15T12:32:57.100+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='monitoring_retraining_pipeline' AIRFLOW_CTX_TASK_ID='check_drift' AIRFLOW_CTX_EXECUTION_DATE='2026-01-15T12:32:51.071007+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-15T12:32:51.071007+00:00'
+[2026-01-15T12:32:57.101+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-01-15T12:32:57.220+0000] {python.py:237} INFO - Done. Returned value was: {'psi_total': 1.3861592481113651, 'psi_by_feature': {'fixed acidity': 0.04515763744566492, 'volatile acidity': 0.02027072109340881, 'citric acid': 0.03440306177955473, 'residual sugar': 0.02941556016626308, 'chlorides': 0.022475627394309465, 'free sulfur dioxide': 0.024318799745031466, 'total sulfur dioxide': 0.03632699018348119, 'density': 11.515139222311484, 'pH': 0.04729614579911247, 'sulphates': 0.017594949130375195, 'alcohol': 3.4553530141763322}, 'threshold': 0.15, 'drift': True}
+[2026-01-15T12:32:57.221+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-01-15T12:32:57.252+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=monitoring_retraining_pipeline, task_id=check_drift, run_id=manual__2026-01-15T12:32:51.071007+00:00, execution_date=20260115T123251, start_date=20260115T123256, end_date=20260115T123257
+[2026-01-15T12:32:57.302+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-01-15T12:32:57.329+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-01-15T12:32:57.331+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

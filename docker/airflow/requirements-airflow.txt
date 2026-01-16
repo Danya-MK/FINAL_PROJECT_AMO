@@ -1,0 +1,9 @@
+pandas
+numpy
+scikit-learn
+scipy
+
+mlflow==2.12.2
+pycaret
+
+psycopg2-binary
